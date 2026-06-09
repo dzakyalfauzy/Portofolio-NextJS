@@ -6,6 +6,8 @@ import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import Hero from "./Hero";
 
+import { asset } from "@/lib/assets";
+
 const TOTAL = 190;
 const PREFIX = "/sequence/ezgif-frame-";
 const EXT = ".png";
@@ -215,7 +217,7 @@ export default function IntroSequence() {
     useEffect(() => {
         updateCanvasSize();
         const first = new Image();
-        first.src = `${PREFIX}002${EXT}`;
+        first.src = asset(`${PREFIX}002${EXT}`);
 
         first.onload = () => {
             const canvas = canvasRef.current;
@@ -242,7 +244,7 @@ export default function IntroSequence() {
         for (let i = 1; i < TOTAL; i++) {
             const padded = String(i + START_FRAME).padStart(3, "0");
             const img = new Image();
-            img.src = `${PREFIX}${padded}${EXT}`;
+            img.src = asset(`${PREFIX}${padded}${EXT}`);
             img.onload = img.onerror = () => {
                 imgs[i] = img;
                 loaded++;
