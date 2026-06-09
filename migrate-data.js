@@ -45,6 +45,15 @@ async function migrate() {
         host: "127.0.0.1", port: 3306, user: "root", password: "", database: "db_portofolio",
     });
 
+    /* ── STEP 1: Delete all existing data to prevent duplicates ── */
+    console.log("🧹 Clearing existing data...");
+    for (const table of Object.keys(MAPPINGS)) {
+        const { error } = await supabase.from(table).delete().neq("id", "00000000-0000-0000-0000-000000000000");
+        if (error) console.log(`   ⚠️  ${table}: ${error.message}`);
+        else console.log(`   ✅ ${table} cleared`);
+    }
+    console.log("");
+
     for (const [table, mapping] of Object.entries(MAPPINGS)) {
         console.log(`📦 ${table}...`);
         const [rows] = await conn.execute(`SELECT * FROM ${table}`);
