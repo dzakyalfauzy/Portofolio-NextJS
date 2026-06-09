@@ -7,6 +7,7 @@ import { ExternalLink, Folder, ChevronLeft, ChevronRight } from "lucide-react";
 import { Github } from "./Icons";
 import { ScrollReveal as ScrollRevealOld } from "@/lib/scroll";
 import { ScrollAnimate, Parallax } from "./GSAPAnimations";
+import { asset } from "@/lib/assets";
 import "@/lib/css/projects.css";
 
 /* ===== Obsidian Canvas Reveal Variants ===== */
@@ -54,7 +55,7 @@ function FeaturedHero({ project, onViewDetail }) {
                 <div className="projects__media-grid" aria-hidden />
                 {hasImage ? (
                     <img
-                        src={project.thumbnail || project.image_path}
+                        src={asset(project.thumbnail || project.image_path || "")}
                         alt={project.title}
                         className="projects__hero-img"
                     />
@@ -123,7 +124,7 @@ function ThumbnailCard({ project, isActive, onClick, index }) {
             <div className={`projects__thumb-media projects__thumb-media--${c}`}>
                 <div className={`projects__media-grad projects__media-grad--${c}`} />
                 {hasImage ? (
-                    <img src={project.thumbnail || project.image_path} alt={project.title} className="projects__thumb-img" />
+                    <img src={asset(project.thumbnail || project.image_path || "")} alt={project.title} className="projects__thumb-img" />
                 ) : (
                     <div className="projects__thumb-icon">
                         <Folder size={20} />
@@ -180,7 +181,7 @@ export default function Projects({ items = [], loading = false }) {
     const [canScrollRight, setCanScrollRight] = useState(false);
 
     const handleViewDetail = (project) => {
-        router.push(`/project/${project.id}`);
+        router.push(`/project?id=${project.id}`);
     };
 
     useEffect(() => {

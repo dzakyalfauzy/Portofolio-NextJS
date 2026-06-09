@@ -1,17 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Calendar, Layers } from "lucide-react";
 import { Github } from "./Icons";
 import { ScrollReveal as ScrollRevealOld } from "@/lib/scroll";
 import { getProject } from "@/lib/supabase-api";
 
-export default function ProjectDetail() {
-    const params = useParams();
+export default function ProjectDetail({ id }) {
     const router = useRouter();
-    const id = params?.id;
     const [project, setProject] = useState(null);
     const [loading, setLoading] = useState(true);
 
