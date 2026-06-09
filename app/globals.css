@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --color-accent-blue: #2563eb;
+    --color-accent-orange: #f97316;
+    --color-accent-pink: #ec4899;
+    --color-surface: #fdfbf7;
+    --color-surface-alt: #f5f3ef;
+    --color-ink: #0f172a;
+    --color-ink-muted: #64748b;
+}
+
+@layer base {
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+        margin: 0;
+        font-family: var(--font-sans);
+        background-color: #0a0a0a;
+        color: #f5f5f5;
+        -webkit-font-smoothing: antialiased;
+    }
+    ::selection {
+        background-color: rgba(239, 68, 68, 0.3);
+        color: #fff;
+    }
+}
+
+/* Layout Shell */
+.layout-shell {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: min(100%, 90rem);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1.35rem, 5vw, 3.5rem);
+    padding-right: clamp(1.35rem, 5vw, 3.5rem);
+}
+
+/* Skeleton */
+@keyframes skeleton-pulse {
+    0% { opacity: 0.6; background-color: rgba(255, 255, 255, 0.05); }
+    50% { opacity: 0.3; background-color: rgba(255, 255, 255, 0.08); }
+    100% { opacity: 0.6; background-color: rgba(255, 255, 255, 0.05); }
+}
+.skeleton {
+    animation: skeleton-pulse 1.8s infinite ease-in-out;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+}

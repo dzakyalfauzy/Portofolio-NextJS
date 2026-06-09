@@ -1,0 +1,47 @@
+/**
+ * Root app shell (app.jsx)
+ */
+
+.app {
+    position: relative;
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    overflow-x: clip;
+    width: 100%;
+    min-width: 0;
+    color: #d4d4d8;
+}
+
+.app *::selection {
+    background-color: rgba(239, 68, 68, 0.25);
+    color: #0a0a0a;
+}
+
+.app__content {
+    position: relative;
+    z-index: 10;
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+}
+
+.app__main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1280px) {
+    .app__main {
+    }
+}

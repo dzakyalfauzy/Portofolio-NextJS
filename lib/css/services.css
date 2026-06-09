@@ -1,0 +1,337 @@
+/**
+ * Services
+ */
+
+.services {
+    position: relative;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    background-color: #fdfbf7;
+    overflow: hidden;
+}
+
+@media (min-width: 640px) {
+    .services {
+        padding-top: 5.5rem;
+        padding-bottom: 5.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .services {
+        padding-top: 7.5rem;
+        padding-bottom: 7.5rem;
+    }
+}
+
+.services__bg-tr {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background-color: rgb(16 185 129 / 0.05);
+    filter: blur(120px);
+    border-radius: 9999px;
+    pointer-events: none;
+}
+
+.services__bg-bl {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background-color: rgb(8 145 178 / 0.05);
+    filter: blur(120px);
+    border-radius: 9999px;
+    pointer-events: none;
+}
+
+.services__header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .services__header {
+        margin-bottom: 5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services__header {
+        text-align: left;
+        margin-bottom: 6.5rem;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 48rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .services__header {
+        margin-bottom: 7.5rem;
+    }
+}
+
+.services__header > * + * {
+    margin-top: 1.25rem;
+}
+
+.services__eyebrow {
+    display: inline-block;
+    color: #10b981;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.services__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+}
+
+@media (min-width: 640px) {
+    .services__title {
+        font-size: 3rem;
+    }
+}
+
+.services__title-accent {
+    background-image: linear-gradient(to right, #10b981, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.services__lead {
+    color: rgb(255 255 255 / 0.4);
+    font-size: 1rem;
+    line-height: 1.625;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.25rem;
+}
+
+@media (min-width: 640px) {
+    .services__lead {
+        font-size: 1.125rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services__lead {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 640px) {
+    .services__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .services__grid {
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services__grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .services__grid {
+        gap: 3.5rem;
+    }
+}
+
+@media (min-width: 1536px) {
+    .services__grid {
+        gap: 4rem;
+    }
+}
+
+.services__card {
+    position: relative;
+    padding: 2.25rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    background-color: rgb(255 255 255 / 0.02);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+@media (min-width: 640px) {
+    .services__card {
+        padding: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services__card {
+        padding: 2.75rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .services__card {
+        padding: 3rem;
+    }
+}
+
+.services__card:hover {
+    background-color: rgb(255 255 255 / 0.04);
+}
+
+@media (min-width: 1024px) {
+    .services__card {
+        text-align: left;
+    }
+}
+
+.services__glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    opacity: 0;
+    filter: blur(48px);
+    transition: opacity 500ms ease;
+    pointer-events: none;
+}
+
+.services__card:hover .services__glow {
+    opacity: 1;
+}
+
+.services__glow--emerald {
+    background-color: rgb(16 185 129 / 0.2);
+}
+
+.services__glow--indigo {
+    background-color: rgb(34 211 238 / 0.2);
+}
+
+.services__glow--sky {
+    background-color: rgb(14 165 233 / 0.2);
+}
+
+.services__glow--rose {
+    background-color: rgb(244 63 94 / 0.2);
+}
+
+.services__card-inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .services__card-inner {
+        gap: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services__card-inner {
+        align-items: flex-start;
+    }
+}
+
+.services__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255 255 255 / 0.7);
+    margin-bottom: 0.25rem;
+    flex-shrink: 0;
+    transition: all 300ms ease;
+}
+
+.services__card:hover .services__icon--emerald {
+    color: #10b981;
+    border-color: rgb(16 185 129 / 0.3);
+    background-color: rgb(16 185 129 / 0.1);
+}
+
+.services__card:hover .services__icon--indigo {
+    color: #22d3ee;
+    border-color: rgb(34 211 238 / 0.3);
+    background-color: rgb(34 211 238 / 0.1);
+}
+
+.services__card:hover .services__icon--sky {
+    color: #38bdf8;
+    border-color: rgb(14 165 233 / 0.3);
+    background-color: rgb(14 165 233 / 0.1);
+}
+
+.services__card:hover .services__icon--rose {
+    color: #fb7185;
+    border-color: rgb(244 63 94 / 0.3);
+    background-color: rgb(244 63 94 / 0.1);
+}
+
+.services__card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.025em;
+}
+
+.services__card-desc {
+    color: rgb(255 255 255 / 0.4);
+    font-size: 0.875rem;
+    line-height: 1.625;
+    max-width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.25rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+@media (min-width: 640px) {
+    .services__card-desc {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services__card-desc {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: none;
+    }
+}
