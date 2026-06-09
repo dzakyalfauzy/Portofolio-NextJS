@@ -270,11 +270,22 @@ export default function Skills({ items = [], loading = false }) {
     const [zoomLevel, setZoomLevel] = useState(0.8);
 
     const mappedSkills = useMemo(() => {
-        if (items?.length > 0) return items.map(mapSkill);
-        return Object.entries(visualMap).map(([, v]) => ({
-            name: v.label, label: v.label, color: v.color,
-            icon: v.icon,  desc: v.desc,  prof: v.prof,
-        }));
+        let raw;
+        if (items?.length > 0) {
+            raw = items.map(mapSkill);
+        } else {
+            raw = Object.entries(visualMap).map(([, v]) => ({
+                name: v.label, label: v.label, color: v.color,
+                icon: v.icon,  desc: v.desc,  prof: v.prof,
+            }));
+        }
+        /* Deduplicate by name */
+        const seen = new Set();
+        return raw.filter((s) => {
+            if (seen.has(s.name)) return false;
+            seen.add(s.name);
+            return true;
+        });
     }, [items]);
 
     return (
