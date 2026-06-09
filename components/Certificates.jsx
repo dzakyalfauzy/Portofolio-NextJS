@@ -25,10 +25,21 @@ function CertificateSkeleton({ span2 }) {
     );
 }
 
+function dedup(arr) {
+    const seen = new Set();
+    return arr.filter((item) => {
+        const key = item.id || item.credential || item.title;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
 export default function Certificates({ items = [], loading = false }) {
     const sectionRef = useRef(null);
     const [showAll, setShowAll] = useState(false);
-    const visibleItems = showAll ? items : items.slice(0, INITIAL_COUNT);
+    const uniqueItems = dedup(items);
+    const visibleItems = showAll ? uniqueItems : uniqueItems.slice(0, INITIAL_COUNT);
 
     return (
         <section id="certificates" ref={sectionRef} className="certificates">
@@ -78,7 +89,7 @@ export default function Certificates({ items = [], loading = false }) {
                 </div>
 
                 {/* See More / See Less */}
-                {!loading && items.length > INITIAL_COUNT && (
+                {!loading && uniqueItems.length > INITIAL_COUNT && (
                     <motion.button
                         onClick={() => setShowAll(!showAll)}
                         whileHover={{ scale: 1.03 }}
@@ -94,12 +105,12 @@ export default function Certificates({ items = [], loading = false }) {
                         onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(79,70,229,0.2)"; e.currentTarget.style.color = "#EF4444"; }}
                         onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.color = "#a1a1aa"; }}
                     >
-                        <span>{showAll ? "Show Less" : `Show All (${items.length})`}</span>
+                        <span>{showAll ? "Show Less" : `Show All (${uniqueItems.length})`}</span>
                         {showAll ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                     </motion.button>
                 )}
 
-                {!loading && items.length === 0 && (
+                {!loading && uniqueItems.length === 0 && (
                     <p className="mt-20 text-center text-[#94a3b8]">
                         No certificates added yet.
                     </p>

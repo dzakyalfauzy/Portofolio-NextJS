@@ -256,9 +256,19 @@ function ExperienceSkeleton() {
     );
 }
 
+function dedup(arr) {
+    const seen = new Set();
+    return arr.filter((item) => {
+        const key = item.id || item.title;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
 export default function Experience({ items = [], loading = false }) {
     const sectionRef = useRef(null);
-    const displayItems = items && items.length > 0 ? items : defaultExperiences;
+    const displayItems = items && items.length > 0 ? dedup(items) : defaultExperiences;
 
     return (
         <section id="experience" ref={sectionRef} className="experience">

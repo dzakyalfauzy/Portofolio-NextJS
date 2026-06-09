@@ -172,11 +172,22 @@ function ProjectSkeleton() {
 
 /* ======================== MAIN COMPONENT ======================== */
 
+function dedup(arr) {
+    const seen = new Set();
+    return arr.filter((item) => {
+        const key = item.id || item.title;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
 export default function Projects({ items = [], loading = false }) {
     const sectionRef = useRef(null);
     const carouselRef = useRef(null);
     const router = useRouter();
-    const [activeProject, setActiveProject] = useState(items[0] || null);
+    const uniqueItems = dedup(items);
+    const [activeProject, setActiveProject] = useState(uniqueItems[0] || null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(false);
 
@@ -185,8 +196,8 @@ export default function Projects({ items = [], loading = false }) {
     };
 
     useEffect(() => {
-        if (items.length > 0 && !activeProject) {
-            setActiveProject(items[0]);
+        if (uniqueItems.length > 0 && !activeProject) {
+            setActiveProject(uniqueItems[0]);
         }
     }, [items]);
 
@@ -235,7 +246,7 @@ export default function Projects({ items = [], loading = false }) {
                         </ScrollRevealOld>
 
                         {/* ===== THUMBNAIL CAROUSEL (staggered 3D reveal) ===== */}
-                        {items.length > 1 && (
+                        {uniqueItems.length > 1 && (
                             <div className="projects__carousel-wrap">
                                 {canScrollLeft && (
                                     <button
@@ -252,7 +263,7 @@ export default function Projects({ items = [], loading = false }) {
                                     className="projects__carousel"
                                     onScroll={checkCarouselScroll}
                                 >
-                                    {items.map((project, i) => (
+                                    {uniqueItems.map((project, i) => (
                                         <ThumbnailCard
                                             key={project.id || project.title}
                                             project={project}
