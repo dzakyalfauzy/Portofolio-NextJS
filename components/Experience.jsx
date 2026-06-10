@@ -4,12 +4,6 @@ import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Briefcase, Calendar, MapPin, Users, Terminal, ChevronLeft, ChevronRight } from "lucide-react";
 
-const BASE = "/Portofolio-NextJS";
-const imgPath = (path) => {
-    if (!path) return "";
-    if (path.startsWith("http")) return path;
-    return `${BASE}${path}`;
-};
 import { ScrollReveal as ScrollRevealOld } from "@/lib/scroll";
 import { ScrollAnimate } from "./GSAPAnimations";
 import "@/lib/css/experience.css";

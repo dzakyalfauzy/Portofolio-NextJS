@@ -31,11 +31,10 @@ const fadeIn = {
     },
 };
 
-const BASE = "/Portofolio-NextJS";
 const imgPath = (path) => {
     if (!path) return "";
     if (path.startsWith("http")) return path;
-    return `${BASE}${path}`;
+    return path;
 };
 
 const PROFILE_PHOTO = "/images/Foto_Profile.png";
