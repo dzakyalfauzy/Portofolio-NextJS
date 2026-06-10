@@ -41,12 +41,12 @@ const visualMap = {
 };
 
 const lucideDefaults = {
-    Webhook:        { label: "API",    color: "#6b6fa3", desc: "REST APIs",         prof: 80 },
-    PenTool:        { label: "UI/UX",  color: "#a84a3a", desc: "UI/UX Design",      prof: 75 },
-    LayoutTemplate: { label: "Layout", color: "#4a9eab", desc: "Responsive design", prof: 80 },
-    Layers:         { label: "Proto",  color: "#5a9e6f", desc: "Prototyping",       prof: 70 },
-    Type:           { label: "Type",   color: "#555555", desc: "Typography",        prof: 65 },
-    Pipette:        { label: "Color",  color: "#c46a3c", desc: "Color theory",      prof: 65 },
+    Webhook:        { label: "API",    color: "#6b6fa3", icon: "postman/postman-original",         desc: "REST APIs",         prof: 80 },
+    PenTool:        { label: "UI/UX",  color: "#a84a3a", icon: "figma/figma-original",             desc: "UI/UX Design",      prof: 75 },
+    LayoutTemplate: { label: "Layout", color: "#4a9eab", icon: "tailwindcss/tailwindcss-original", desc: "Responsive design", prof: 80 },
+    Layers:         { label: "Proto",  color: "#5a9e6f", icon: "vuejs/vuejs-original",             desc: "Prototyping",       prof: 70 },
+    Type:           { label: "Type",   color: "#555555", icon: "typescript/typescript-original",   desc: "Typography",        prof: 65 },
+    Pipette:        { label: "Color",  color: "#c46a3c", icon: "figma/figma-original",             desc: "Color theory",      prof: 65 },
 };
 
 const categoryColors = {
