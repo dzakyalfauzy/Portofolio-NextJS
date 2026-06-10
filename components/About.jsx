@@ -93,7 +93,7 @@ function IDCard() {
 
             <div className="about__id-photo-area">
                 <img
-                    src={imgPath("/images/foto_aboutme.png")}
+                    src={`${BASE}/images/foto_aboutme.png`}
                     alt="Dzaky Al Fauzy"
                     className="about__id-photo"
                     draggable={false}

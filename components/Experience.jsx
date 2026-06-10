@@ -31,7 +31,7 @@ const defaultExperiences = [
             "Pancasila (Team Creative)",
             "Tangan Brawijaya (PJ Fakultas Vokasi)"
         ],
-        images: ["/images/experience/emub.jpg"],
+        images: [],
         current: true
     },
     {
@@ -46,7 +46,7 @@ const defaultExperiences = [
             "PKM BOOST (Steering Committee)",
             "VOCUS (Steering Committee)"
         ],
-        images: ["/images/experience/penalaran.jpg"],
+        images: [],
         current: false
     },
     {
@@ -62,7 +62,7 @@ const defaultExperiences = [
             "Tech Hunt (Wakil Ketua Pelaksana)",
             "PKKMB Prodi TI (Co Acara)"
         ],
-        images: ["/images/experience/hmpsti.jpg"],
+        images: [],
         current: false
     }
 ];
