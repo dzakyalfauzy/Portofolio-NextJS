@@ -8,7 +8,11 @@ import { Github } from "./Icons";
 import { ScrollReveal as ScrollRevealOld } from "@/lib/scroll";
 import { ScrollAnimate, Parallax } from "./GSAPAnimations";
 const BASE = "/Portofolio-NextJS";
-const img = (path) => path ? `${BASE}${path}` : "";
+const img = (path) => {
+    if (!path) return "";
+    if (path.startsWith("http")) return path;
+    return `${BASE}${path}`;
+};
 import "@/lib/css/projects.css";
 
 /* ===== Obsidian Canvas Reveal Variants ===== */
