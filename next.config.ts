@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/Portofolio-NextJS",
+  // basePath dihapus karena sudah pakai custom domain
+  // basePath: "/Portofolio-NextJS",
   images: {
     unoptimized: true,
   },
