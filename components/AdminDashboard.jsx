@@ -293,6 +293,17 @@ export default function Dashboard() {
                 if (formData.stack) {
                     data.tags = formData.stack.split(",").map(s => s.trim()).filter(s => s);
                 }
+                // Upload new images if selected
+                if (imageFiles.length > 0) {
+                    const uploadedUrls = [];
+                    for (const file of imageFiles) {
+                        const url = await uploadFile(file, "experiences");
+                        uploadedUrls.push(url);
+                    }
+                    data.images = [...existingImages, ...uploadedUrls];
+                } else {
+                    data.images = existingImages;
+                }
             }
 
             if (activeTab === "skills") {
