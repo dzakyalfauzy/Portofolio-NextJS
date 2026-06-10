@@ -275,7 +275,8 @@ function dedup(arr) {
 
 export default function Experience({ items = [], loading = false }) {
     const sectionRef = useRef(null);
-    const displayItems = items && items.length > 0 ? dedup(items) : defaultExperiences;
+    // Selalu pakai defaultExperiences karena data Supabase belum lengkap
+    const displayItems = defaultExperiences;
 
     return (
         <section id="experience" ref={sectionRef} className="experience">
