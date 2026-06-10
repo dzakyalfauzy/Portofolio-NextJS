@@ -54,7 +54,7 @@ function FeaturedHero({ project, onViewDetail }) {
                 <div className="projects__media-grid" aria-hidden />
                 {hasImage ? (
                     <img
-                        src={img(project.thumbnail || project.image_path)}
+                        src={project.thumbnail || project.image_path}
                         alt={project.title}
                         className="projects__hero-img"
                     />
@@ -123,7 +123,7 @@ function ThumbnailCard({ project, isActive, onClick, index }) {
             <div className={`projects__thumb-media projects__thumb-media--${c}`}>
                 <div className={`projects__media-grad projects__media-grad--${c}`} />
                 {hasImage ? (
-                    <img src={img(project.thumbnail || project.image_path)} alt={project.title} className="projects__thumb-img" />
+                    <img src={project.thumbnail || project.image_path} alt={project.title} className="projects__thumb-img" />
                 ) : (
                     <div className="projects__thumb-icon">
                         <Folder size={20} />
