@@ -12,15 +12,15 @@ import "@/lib/css/footer.css";
 const navLinks = [
     { label: "Home", to: "/", hash: "" },
     { label: "About", to: "/", hash: "#about" },
-    { label: "Services", to: "/", hash: "#services" },
+    { label: "skills", to: "/", hash: "#skills" },
     { label: "Projects", to: "/", hash: "#projects" },
     { label: "Certificates", to: "/", hash: "#certificates" },
 ];
 
 const socials = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: Github, href: "https://github.com/dzakyalfauzy", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/dzaky-al-fauzy-78a647409/", label: "LinkedIn" },
+    { icon: Instagram, href: "https://instagram.com/dzakyalfauzii", label: "Instagram" },
 ];
 
 export default function Footer() {
