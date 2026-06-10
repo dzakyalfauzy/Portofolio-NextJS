@@ -3,6 +3,13 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Briefcase, Calendar, MapPin, Users, Terminal, ChevronLeft, ChevronRight } from "lucide-react";
+
+const BASE = "/Portofolio-NextJS";
+const imgPath = (path) => {
+    if (!path) return "";
+    if (path.startsWith("http")) return path;
+    return `${BASE}${path}`;
+};
 import { ScrollReveal as ScrollRevealOld } from "@/lib/scroll";
 import { ScrollAnimate } from "./GSAPAnimations";
 import "@/lib/css/experience.css";
@@ -99,7 +106,7 @@ function ImageCarousel({ images, company }) {
                     failedImages.has(i) ? null : (
                         <div key={i} className="experience-carousel__slide">
                             <img
-                                src={src}
+                                src={imgPath(src)}
                                 alt={`${company} ${i + 1}`}
                                 className="experience-carousel__img"
                                 onError={() => handleImageError(i)}
