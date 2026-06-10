@@ -9,9 +9,9 @@ import { ScrollAnimate, Parallax, TextReveal, MagneticButton } from "./GSAPAnima
 import "@/lib/css/about.css";
 
 const stats = [
-    { icon: Briefcase, value: "3+", label: "Years Exp." },
-    { icon: Code2, value: "30+", label: "Projects" },
-    { icon: Users, value: "15+", label: "Clients" },
+    { icon: Briefcase, value: "2+", label: "Years Exp." },
+    { icon: Code2, value: "7+", label: "Projects" },
+    { icon: Users, value: "5+", label: "Clients" },
     { icon: Coffee, value: "1k+", label: "Coffees" },
 ];
 
