@@ -7,7 +7,8 @@ import { ExternalLink, Folder, ChevronLeft, ChevronRight } from "lucide-react";
 import { Github } from "./Icons";
 import { ScrollReveal as ScrollRevealOld } from "@/lib/scroll";
 import { ScrollAnimate, Parallax } from "./GSAPAnimations";
-import { asset } from "@/lib/assets";
+const BASE = "/Portofolio-NextJS";
+const img = (path) => path ? `${BASE}${path}` : "";
 import "@/lib/css/projects.css";
 
 /* ===== Obsidian Canvas Reveal Variants ===== */
@@ -55,7 +56,7 @@ function FeaturedHero({ project, onViewDetail }) {
                 <div className="projects__media-grid" aria-hidden />
                 {hasImage ? (
                     <img
-                        src={asset(project.thumbnail || project.image_path || "")}
+                        src={img(project.thumbnail || project.image_path)}
                         alt={project.title}
                         className="projects__hero-img"
                     />
@@ -124,7 +125,7 @@ function ThumbnailCard({ project, isActive, onClick, index }) {
             <div className={`projects__thumb-media projects__thumb-media--${c}`}>
                 <div className={`projects__media-grad projects__media-grad--${c}`} />
                 {hasImage ? (
-                    <img src={asset(project.thumbnail || project.image_path || "")} alt={project.title} className="projects__thumb-img" />
+                    <img src={img(project.thumbnail || project.image_path)} alt={project.title} className="projects__thumb-img" />
                 ) : (
                     <div className="projects__thumb-icon">
                         <Folder size={20} />

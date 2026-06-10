@@ -3,7 +3,7 @@
 import { useRef, useState, useCallback } from "react";
 import { motion, useMotionValue, useTransform, useSpring, useScroll } from "framer-motion";
 import { Download, Briefcase, Code2, Users, Coffee, GripVertical } from "lucide-react";
-import { asset } from "@/lib/assets";
+const BASE = "/Portofolio-NextJS";
 import { ScrollReveal as ScrollRevealOld } from "@/lib/scroll";
 import { ScrollAnimate, Parallax, TextReveal, MagneticButton } from "./GSAPAnimations";
 import "@/lib/css/about.css";
@@ -88,7 +88,7 @@ function IDCard() {
 
             <div className="about__id-photo-area">
                 <img
-                    src={asset("/images/foto_aboutme.png")}
+                    src={`${BASE}/images/foto_aboutme.png`}
                     alt="Dzaky Al Fauzy"
                     className="about__id-photo"
                     draggable={false}

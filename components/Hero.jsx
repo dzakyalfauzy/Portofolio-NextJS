@@ -31,7 +31,7 @@ const fadeIn = {
     },
 };
 
-import { asset } from "@/lib/assets";
+const BASE = "/Portofolio-NextJS";
 
 const PROFILE_PHOTO = "/images/Foto_Profile.png";
 
@@ -260,7 +260,7 @@ export default function Hero() {
                                 className="hero__portrait"
                             >
                                 <img
-                                    src={asset(PROFILE_PHOTO)}
+                                    src={`${BASE}${PROFILE_PHOTO}`}
                                     alt="Dzaky Al Fauzy"
                                     className="hero__portrait-img"
                                     width={520}
