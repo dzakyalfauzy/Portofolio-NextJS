@@ -183,11 +183,11 @@ export default function Dashboard() {
             setFormData({
                 title: item.title,
                 company: item.company,
-                location: item.location,
-                duration: item.duration,
+                location: item.location || "",
+                duration: item.duration || "",
                 description: item.description,
-                stack: Array.isArray(item.stack) ? item.stack.join(", ") : "",
-                current: item.current === 1 || item.current === true
+                stack: Array.isArray(item.tags) ? item.tags.join(", ") : "",
+                current: item.current === true
             });
             const imgs = Array.isArray(item.images) ? item.images : [];
             setExistingImages(imgs);
@@ -287,6 +287,9 @@ export default function Dashboard() {
                 data.title = formData.title;
                 data.company = formData.company;
                 data.description = formData.description;
+                data.location = formData.location || "";
+                data.duration = formData.duration || "";
+                data.current = formData.current || false;
                 if (formData.stack) {
                     data.tags = formData.stack.split(",").map(s => s.trim()).filter(s => s);
                 }
