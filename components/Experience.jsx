@@ -100,7 +100,7 @@ function ImageCarousel({ images, company }) {
                     failedImages.has(i) ? null : (
                         <div key={i} className="experience-carousel__slide">
                             <img
-                                src={imgPath(src)}
+                                src={src}
                                 alt={`${company} ${i + 1}`}
                                 className="experience-carousel__img"
                                 onError={() => handleImageError(i)}
