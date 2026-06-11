@@ -135,11 +135,11 @@ export default function About() {
 
                 <div className="about__grid">
                     <div className="about__col-visual">
-                        <div className="about__id-card-container" style={{ width: "100%", height: "600px" }}>
+                        <div className="about__id-card-container" style={{ width: "100%", height: "700px", marginTop: "-100px" }}>
                             <Lanyard
-                                position={[0, 0, 24]}
+                                position={[0, -1, 20]}
                                 gravity={[0, -40, 0]}
-                                fov={25}
+                                fov={18}
                                 transparent={true}
                                 frontImage="/images/foto_aboutme.png"
                             />
