@@ -277,7 +277,7 @@ export default function Experience({ items = [], loading = false }) {
                 <ScrollRevealOld className="experience__header">
                     <span className="experience__eyebrow">Experience</span>
                     <h2 className="experience__title">
-                        My professional <span className="experience__title-accent">journey</span>
+                        My<span className="experience__title-accent">journey</span>
                     </h2>
                     <p className="experience__lead">
                         A timeline of roles, challenges, and growth across different teams and projects.
