@@ -185,7 +185,7 @@ export default function About() {
                         <ScrollAnimate animation="blurReveal">
                             <div className="about__bio flex flex-col gap-6">
                                 <p className="about__bio-lead leading-relaxed">
-                                    I&apos;m a full-stack developer with over 3 years of experience building modern web
+                                    I&apos;m a full-stack developer with over 2 years of experience building modern web
                                     applications. I specialize in creating performant, accessible, and visually stunning
                                     digital products that solve real-world problems.
                                 </p>
