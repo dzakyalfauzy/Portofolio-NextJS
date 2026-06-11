@@ -6,6 +6,7 @@ import { Download, Briefcase, Code2, Users, Coffee } from "lucide-react";
 import { ScrollReveal as ScrollRevealOld } from "@/lib/scroll";
 import { ScrollAnimate, Parallax, MagneticButton } from "./GSAPAnimations";
 import Lanyard from "./Lanyard";
+import { Download, Briefcase, Code2, Users, Coffee, GripVertical } from "lucide-react";
 import "@/lib/css/about.css";
 
 const stats = [
