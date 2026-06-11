@@ -202,26 +202,18 @@ function TimelineItem({ exp, index }) {
 
                     <p className="experience-item__desc">{exp.description}</p>
 
-                    {Array.isArray(exp.prokers) && exp.prokers.length > 0 && (
+                    {Array.isArray(exp.tags) && exp.tags.length > 0 && (
                         <div className="experience-item__prokers">
                             <h4 className="experience-item__prokers-title">Programs & Roles:</h4>
                             <div className="experience-item__proker-tags">
-                                {exp.prokers.map((proker) => (
-                                    <span key={proker} className="experience-item__proker-tag">
-                                        {proker}
+                                {exp.tags.map((tag) => (
+                                    <span key={tag} className="experience-item__proker-tag">
+                                        {tag}
                                     </span>
                                 ))}
                             </div>
                         </div>
                     )}
-
-                    <div className="experience-item__tags">
-                        {Array.isArray(exp.stack) && exp.stack.map((tech) => (
-                            <span key={tech} className="experience-item__tag">
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
                 </motion.div>
             </div>
 
