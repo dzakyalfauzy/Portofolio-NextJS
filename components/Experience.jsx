@@ -69,6 +69,12 @@ function ImageCarousel({ images, company }) {
 
     const validImages = images.filter((_, i) => !failedImages.has(i));
 
+    // Check scroll state on mount dan saat images load
+    useEffect(() => {
+        const timer = setTimeout(() => checkScroll(), 100);
+        return () => clearTimeout(timer);
+    }, [validImages.length]);
+
     const checkScroll = () => {
         const el = scrollRef.current;
         if (!el) return;
