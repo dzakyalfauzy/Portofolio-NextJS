@@ -135,17 +135,13 @@ export default function About() {
 
                 <div className="about__grid">
                     <div className="about__col-visual">
-                        <Parallax speed={-0.15}>
-                            <ScrollAnimate animation="scaleUp" duration={0.9}>
-                                <div className="about__id-card-container" style={{ height: 400 }}>
-                                    <Lanyard
-                                        position={[0, 0, 20]}
-                                        gravity={[0, -40, 0]}
-                                        frontImage="/images/Foto_Profile.png"
-                                    />
-                                </div>
-                            </ScrollAnimate>
-                        </Parallax>
+                        <div className="about__id-card-container" style={{ height: 400 }}>
+                            <Lanyard
+                                position={[0, 0, 20]}
+                                gravity={[0, -40, 0]}
+                                frontImage="/images/Foto_Profile.png"
+                            />
+                        </div>
 
                         <div className="about__stats">
                             {stats.map(({ icon: Icon, value, label }, i) => (
