@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Briefcase, Calendar, MapPin, Users, Terminal, ChevronLeft, ChevronRight } from "lucide-react";
 
