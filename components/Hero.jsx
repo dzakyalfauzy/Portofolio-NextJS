@@ -40,10 +40,10 @@ const imgPath = (path) => {
 const PROFILE_PHOTO = "/images/Foto_Profile.png";
 
 const socials = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/dzakyalfauzy", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/dzaky-al-fauzy-78a647409/", label: "LinkedIn" },
+    { icon: Instagram, href: "https://instagram.com/dzakyalfauzii", label: "Instagram" },
+    { icon: Mail, href: "mailto:dzakyalfauzyy@gmail.com", label: "Email" },
 ];
 
 const roles = [
