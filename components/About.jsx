@@ -135,7 +135,7 @@ export default function About() {
 
                 <div className="about__grid">
                     <div className="about__col-visual">
-                        <div className="about__id-card-container" style={{ height: 400 }}>
+                        <div className="about__id-card-container" style={{ width: "100%", height: 400 }}>
                             <Lanyard
                                 position={[0, 0, 20]}
                                 gravity={[0, -40, 0]}
