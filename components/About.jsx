@@ -167,7 +167,7 @@ export default function About() {
                             <div className="about__cv-wrap">
                                 <MagneticButton strength={0.15}>
                                     <motion.a
-                                        href="/cv.pdf"
+                                        href="https://dfuprxqhyvpelekncuzv.supabase.co/storage/v1/object/public/portfolio/cv/CV%20Dzaky%20Alfauzy%20Naw-waf%20Inggris.pdf"
                                         download
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
